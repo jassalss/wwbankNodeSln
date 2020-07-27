@@ -11,7 +11,7 @@
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "Simerpreet Jassal",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",

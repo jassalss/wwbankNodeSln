@@ -5,6 +5,8 @@ const saveNewCustomer = require("../controllers/saveNewCust");
 const depositTheMoney = require("../controllers/deposit");
 const withdraw = require("../controllers/withdraw");
 const transferTheMoney = require("../controllers/transfer");
+const fetchAllAccounts = require("../controllers/fetchAllAccount");
+const fetchSingleAccount = require("../controllers/fetchSingleAccount");
 const router = express.Router();
 
 router.post(
@@ -52,6 +54,12 @@ router.post(
   ],
   transferTheMoney
 );
+router.post(
+  "/check-balance",
+  [body("accountNumber").isNumeric().not().isEmpty()],
+  fetchSingleAccount
+);
+router.get("/all-accounts", fetchAllAccounts);
 // // POST /feed/post
 // router.post("/post", feedController.createPost);
 
