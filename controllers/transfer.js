@@ -6,7 +6,6 @@ const transferTheMoney = async (req, res, next) => {
   const errors = validationResult(req);
   try {
     if (!errors.isEmpty()) {
-      console.log(errors.array());
       const error = new Error("Validation failed, entered data is incorrect.");
       error.statusCode = 422;
       throw error;
@@ -14,10 +13,10 @@ const transferTheMoney = async (req, res, next) => {
     let toAccountNum = req.body.toAccountNum;
     let fromAccountnum = req.body.fromAccountnum;
     let amount = req.body.amount;
-    let otherCurrency = req.body.otherCurrency;
     let cust_id = req.body.customerId;
     let cust_name = req.body.customerName;
     let currencyType = req.body.currencyType;
+    let otherCurrency = "";
     if (currencyType !== "CAD") {
       otherCurrency = ` = $${amount} ${currencyType}`;
       amount = helper.Converter(amount, currencyType);
@@ -30,7 +29,6 @@ const transferTheMoney = async (req, res, next) => {
         let currentBal = parseFloat(FromAccount.Balance);
         let requestBal = parseFloat(amount);
         var dateTime = helper.currentDateTime();
-        console.log(FromAccount, cust_name, cust_id);
         if (toAccountNum != fromAccountnum) {
           if (
             FromAccount.CustomerName == cust_name &&
@@ -54,7 +52,7 @@ const transferTheMoney = async (req, res, next) => {
                 ToAccount.Balance = currentBal2;
                 eventref.set(ToAccount);
                 res.status(201).json({
-                  message: `From account ${fromAccountnum} $${amount} CAD ${otherCurrency} sccuessfully transfer to ${toAccountNum}`,
+                  message: `From account# ${fromAccountnum} $${amount} CAD ${otherCurrency} sccuessfully transfer to acount# ${toAccountNum}`,
                 });
               } else {
                 res.status(201).json({

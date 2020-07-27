@@ -7,7 +7,6 @@ const withDrawTheMoney = async (req, res, next) => {
   const errors = validationResult(req);
   try {
     if (!errors.isEmpty()) {
-      console.log(errors.array());
       const error = new Error("Validation failed, entered data is incorrect.");
       error.statusCode = 422;
       throw error;

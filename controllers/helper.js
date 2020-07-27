@@ -22,9 +22,9 @@ const currentDateTime = () => {
 const comapreTheAccount = (objFromDB, userInput) => {
   let message = "";
   let result = false;
-  if (objFromDB.AccountNumber === userInput.AccountNumber) {
-    if (objFromDB.CustomerId === userInput.CustomerId) {
-      if (objFromDB.CustomerName === userInput.CustomerName) {
+  if (objFromDB.AccountNumber == userInput.AccountNumber) {
+    if (objFromDB.CustomerId == userInput.CustomerId) {
+      if (objFromDB.CustomerName == userInput.CustomerName) {
         result = true;
       } else {
         message =

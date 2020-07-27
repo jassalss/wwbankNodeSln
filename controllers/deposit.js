@@ -7,7 +7,6 @@ const depositTheMoney = async (req, res, next) => {
   const errors = validationResult(req);
   try {
     if (!errors.isEmpty()) {
-      console.log(errors.array());
       const error = new Error("Validation failed, entered data is incorrect.");
       error.statusCode = 422;
       throw error;
@@ -44,7 +43,7 @@ const depositTheMoney = async (req, res, next) => {
       }
       eventref.set(account);
       res.status(201).json({
-        message: `Amount $${customerObj.Balance} CAD ${otherCurrency} in account with account number ${customerObj.AccountNumber} by ${customerObj.CustomerName} successfully deposited.`,
+        message: `Amount $${customerObj.Amount} CAD ${otherCurrency} in account with account number ${customerObj.AccountNumber} by ${customerObj.CustomerName} successfully deposited.`,
       });
     } else {
       res.status(201).json({ message });
