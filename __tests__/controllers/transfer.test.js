@@ -107,7 +107,7 @@ describe("Check conroller method 'transferTheMoney' ", () => {
     expect(res.send).toHaveBeenCalledTimes(0);
     expect(res.status).toHaveBeenCalledWith(201);
     expect(res.json).toHaveBeenCalledWith({
-      message: `From account# ${input.fromAccountnum} $${input.amount} CAD  sccuessfully transfer to acount# ${input.toAccountNum}`,
+      message: `From account# ${input.fromAccountnum} $${input.amount} CAD  successfully transfer to account# ${input.toAccountNum}`,
     });
   });
 });

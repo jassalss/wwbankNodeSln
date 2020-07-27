@@ -78,7 +78,7 @@ describe("Check conroller method 'withDrawTheMoney' ", () => {
     expect(res.send).toHaveBeenCalledTimes(0);
     expect(res.status).toHaveBeenCalledWith(201);
     expect(res.json).toHaveBeenCalledWith({
-      message: `${input.customerName} withdraw $40 CAD  = $20 USD from acount with account# ${input.accountNumber}.`,
+      message: `${input.customerName} withdraw $40 CAD  = $20 USD from account with account# ${input.accountNumber}.`,
     });
   });
 });

@@ -52,7 +52,7 @@ const transferTheMoney = async (req, res, next) => {
                 ToAccount.Balance = currentBal2;
                 eventref.set(ToAccount);
                 res.status(201).json({
-                  message: `From account# ${fromAccountnum} $${amount} CAD ${otherCurrency} sccuessfully transfer to acount# ${toAccountNum}`,
+                  message: `From account# ${fromAccountnum} $${amount} CAD ${otherCurrency} successfully transfer to account# ${toAccountNum}`,
                 });
               } else {
                 res.status(201).json({

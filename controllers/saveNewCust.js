@@ -29,14 +29,14 @@ const saveNewCustomer = async (req, res, next) => {
       `allNodeAccounts/${customerObj.AccountNumber}`
     );
     const snapshot = await eventref.once("value");
-    var message = "Account Already exist. Please use another Account Number";
+    var message = "Account Already exists. Please use another Account Number";
 
     if (!snapshot.exists()) {
       await realTimeDB
         .ref(`allNodeAccounts/${customerObj.AccountNumber}`)
         .set(customerObj);
       res.status(201).json({
-        message: `New Account Created Sucessfully With balance $${customerObj.Balance} CAD ${otherCurrency}`,
+        message: `New Account Created Successfully With balance $${customerObj.Balance} CAD ${otherCurrency}`,
       });
     } else {
       res.status(201).json({

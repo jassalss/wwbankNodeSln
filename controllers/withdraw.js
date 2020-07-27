@@ -48,7 +48,7 @@ const withDrawTheMoney = async (req, res, next) => {
               account.depositHistory = `${customerObj.CustomerName} withdraw $${customerObj.Amount} CAD ${otherCurrency} from this account at ${dateTime}`;
             }
             res.status(201).json({
-              message: `${customerObj.CustomerName} withdraw $${customerObj.Amount} CAD ${otherCurrency} from acount with account# ${customerObj.AccountNumber}.`,
+              message: `${customerObj.CustomerName} withdraw $${customerObj.Amount} CAD ${otherCurrency} from account with account# ${customerObj.AccountNumber}.`,
             });
           } else {
             res.status(201).json({
