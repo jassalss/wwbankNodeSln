@@ -2,8 +2,6 @@
 
 ## It is  Node.js + Express.js + Firebase app. 
 
-### It is a solution to Option A.
-
 For this app, MVC architecture is followed. Routes are in a different folder, and controllers are in a separate folder. For request and response, JSON is used.
 There is no frontend for this app. I created an independent React app for frontend (Option B). Kindly test this app in Postman or other application. 
 Most of the request methods are post. So it would be best if you had Postman.
