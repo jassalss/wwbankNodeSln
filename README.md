@@ -1,6 +1,7 @@
-# wwbank Canada Node App
+# wwbank Canada Node.js App 
 
-## It is  Node.js + Express.js + Firebase app. 
+It is the Node.js + Firebase + Rest API project. This task is a reproduction of the financial procedure. I made six distinctive endpoints to mock the financial framework. User can create the bank account, deposit or withdraw the money. The user also can transfer money from one account to another account. There are some other features like checking the balance and checking all accounts.
+
 
 For this app, MVC architecture is followed. Routes are in a different folder, and controllers are in a separate folder. For request and response, JSON is used.
 There is no frontend for this app. I created an independent React app for frontend (Option B). Kindly test this app in Postman or other application. 
